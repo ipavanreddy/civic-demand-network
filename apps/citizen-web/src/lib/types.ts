@@ -1,6 +1,9 @@
 export type SystemStatus = {
   demo_mode: boolean;
-  integrations: Record<string, { mode: "real" | "demo"; env: string; detail: string }>;
+  live_count?: number;
+  total_count?: number;
+  /** real = live Google service · demo = not configured · fallback = configured but last call failed */
+  integrations: Record<string, { mode: "real" | "demo" | "fallback"; env: string; detail: string }>;
   sample_data: boolean;
   synthetic_requests: number;
   live_requests: number;

@@ -7,7 +7,7 @@ from fastapi.testclient import TestClient
 from app.config import settings
 from app.store import Store, set_store
 
-for field in ("gemini_api_key", "google_api_key", "maps_api_key", "telegram_bot_token", "gcs_bucket", "google_cloud_project"):
+for field in ("gemini_api_key", "google_cloud_api_key", "maps_api_key", "telegram_bot_token", "gcs_bucket", "google_cloud_project"):
     setattr(settings, field, "")
 settings.google_genai_use_vertexai = False
 settings.use_bigquery = False

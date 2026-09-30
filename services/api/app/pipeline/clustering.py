@@ -62,6 +62,20 @@ def _similarities(req: CitizenRequest, store: Store, candidates: list[DemandClus
     return {c.cluster_id: cosine(q, tokens(_profile_text(store, c))) for c in candidates}, "bow"
 
 
+def warm_embeddings(store: Store) -> None:
+    """Embed every cluster summary once (called in the background at startup) so the first
+    citizen confirmation does not pay the embedding cold start."""
+    if not gemini.is_configured():
+        return
+    try:
+        missing = [c for c in store.clusters.values() if c.cluster_id not in _embedding_cache]
+        if missing:
+            vecs = gemini.embed_texts([c.summary for c in missing])
+            _embedding_cache.update({c.cluster_id: v for c, v in zip(missing, vecs)})
+    except Exception as exc:  # noqa: BLE001
+        log.warning("embedding warm-up failed (will retry on demand): %s", exc)
+
+
 def assign(req: CitizenRequest, store: Store) -> dict:
     """Join the best matching cluster or start a new one. Returns an explanation dict."""
     unit = store.units.get(req.lgd_unit or "")

@@ -4,6 +4,7 @@ from __future__ import annotations
 import logging
 from pathlib import Path
 
+from app import runtime_health
 from app.config import REPO_ROOT, settings
 
 log = logging.getLogger(__name__)
@@ -17,9 +18,11 @@ def save(name: str, data: bytes, content_type: str) -> str:
 
             blob = storage.Client().bucket(settings.gcs_bucket).blob(f"requests/{name}")
             blob.upload_from_string(data, content_type=content_type)
+            runtime_health.record("storage", True)
             return f"gs://{settings.gcs_bucket}/requests/{name}"
         except Exception as exc:  # noqa: BLE001
             log.warning("GCS upload failed, storing locally: %s", exc)
+            runtime_health.record("storage", False, exc)
     LOCAL_DIR.mkdir(parents=True, exist_ok=True)
     path: Path = LOCAL_DIR / name
     path.write_bytes(data)

@@ -80,7 +80,7 @@ Each integration sits behind one adapter; setting its env var is the only step n
 |---|---|---|---|
 | `GEMINI_API_KEY` (or `GOOGLE_GENAI_USE_VERTEXAI=true` + `GOOGLE_CLOUD_PROJECT` + ADC) | Gemini request extraction (`ai/prompts/extract_v1.md`), evidence briefs (`evidence_brief_v1.md`), embeddings for clustering, audio transcription / translation fallback | `app/ai/gemini.py` | Hand-authored fixtures (`ai/evaluation/fixtures/`), keyword rule extractor, template brief, bag-of-words similarity |
 | `GEMINI_MODEL`, `GEMINI_EMBEDDING_MODEL` | Model IDs (never hard-coded) | `app/config.py` | – |
-| `GOOGLE_API_KEY` | Cloud Speech-to-Text, Translation, Text-to-Speech (REST) | `app/integrations/google_speech.py` | Gemini (if configured), else sample transcript / fixture translation / browser speech synthesis |
+| `GOOGLE_CLOUD_API_KEY` | Cloud Speech-to-Text, Translation, Text-to-Speech (REST) | `app/integrations/google_speech.py` | Gemini (if configured), else sample transcript / fixture translation / browser speech synthesis |
 | `MAPS_API_KEY` | Google Geocoding for unmatched place names | `app/integrations/maps.py` | Local gazetteer (exact / fuzzy / pin) |
 | `NEXT_PUBLIC_MAPS_API_KEY` (`apps/officer-dashboard/.env.local`) | Google Maps hotspot map | `components/map-google.tsx` | Leaflet + OpenStreetMap tiles |
 | `USE_BIGQUERY=true` + `GOOGLE_CLOUD_PROJECT` (+ ADC) | Streams requests, assignments, briefs, weight changes, decisions to BigQuery (`infrastructure/bigquery/schema.sql`) | `app/integrations/bigquery_sink.py` | In-memory store + local JSON file |

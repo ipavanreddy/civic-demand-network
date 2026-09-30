@@ -1,4 +1,4 @@
-"""Cloud Speech-to-Text, Translation and Text-to-Speech via REST (API key in GOOGLE_API_KEY).
+"""Cloud Speech-to-Text, Translation and Text-to-Speech via REST (API key in GOOGLE_CLOUD_API_KEY).
 
 These are thin adapters: callers check `configured()` and fall back to Gemini or demo mode.
 """
@@ -8,6 +8,7 @@ import base64
 
 import httpx
 
+from app import runtime_health
 from app.config import settings
 
 BCP47 = {"en": "en-IN", "hi": "hi-IN", "te": "te-IN"}
@@ -15,7 +16,20 @@ TIMEOUT = 30.0
 
 
 def configured() -> bool:
-    return bool(settings.google_api_key)
+    return bool(settings.google_cloud_api_key)
+
+
+def _post(integration: str, url: str, body: dict) -> dict:
+    """POST with the API key; records the outcome for the demo badge (errors are re-raised)."""
+    try:
+        res = httpx.post(url, params={"key": settings.google_cloud_api_key}, json=body, timeout=TIMEOUT)
+        res.raise_for_status()
+        out = res.json()
+    except Exception as exc:
+        runtime_health.record(integration, False, exc)
+        raise
+    runtime_health.record(integration, True)
+    return out
 
 
 def _encoding(content_type: str) -> dict:
@@ -43,12 +57,7 @@ def speech_to_text(audio: bytes, content_type: str, language: str) -> tuple[str,
         },
         "audio": {"content": base64.b64encode(audio).decode()},
     }
-    res = httpx.post(
-        "https://speech.googleapis.com/v1p1beta1/speech:recognize",
-        params={"key": settings.google_api_key}, json=body, timeout=TIMEOUT,
-    )
-    res.raise_for_status()
-    results = res.json().get("results", [])
+    results = _post("speech_to_text", "https://speech.googleapis.com/v1p1beta1/speech:recognize", body).get("results", [])
     transcript = " ".join(r["alternatives"][0]["transcript"] for r in results if r.get("alternatives"))
     detected = results[0].get("languageCode", primary) if results else primary
     lang = next((k for k, v in BCP47.items() if v.lower() == detected.lower()), language)
@@ -60,12 +69,7 @@ def translate(text: str, target: str = "en", source: str | None = None) -> tuple
     body = {"q": text, "target": target, "format": "text"}
     if source:
         body["source"] = source
-    res = httpx.post(
-        "https://translation.googleapis.com/language/translate/v2",
-        params={"key": settings.google_api_key}, json=body, timeout=TIMEOUT,
-    )
-    res.raise_for_status()
-    t = res.json()["data"]["translations"][0]
+    t = _post("translation", "https://translation.googleapis.com/language/translate/v2", body)["data"]["translations"][0]
     return t["translatedText"], t.get("detectedSourceLanguage", source or "")
 
 
@@ -76,9 +80,4 @@ def text_to_speech(text: str, language: str) -> str:
         "voice": {"languageCode": BCP47.get(language, "en-IN")},
         "audioConfig": {"audioEncoding": "MP3"},
     }
-    res = httpx.post(
-        "https://texttospeech.googleapis.com/v1/text:synthesize",
-        params={"key": settings.google_api_key}, json=body, timeout=TIMEOUT,
-    )
-    res.raise_for_status()
-    return res.json()["audioContent"]
+    return _post("text_to_speech", "https://texttospeech.googleapis.com/v1/text:synthesize", body)["audioContent"]

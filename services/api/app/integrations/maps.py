@@ -5,6 +5,7 @@ import logging
 
 import httpx
 
+from app import runtime_health
 from app.config import settings
 
 log = logging.getLogger(__name__)
@@ -25,9 +26,14 @@ def geocode(address: str) -> tuple[float, float] | None:
         )
         res.raise_for_status()
         results = res.json().get("results", [])
+        status = res.json().get("status")
+        if status not in ("OK", "ZERO_RESULTS"):  # e.g. REQUEST_DENIED for a restricted key
+            raise httpx.HTTPError(f"Geocoding status {status}: {res.json().get('error_message', '')}")
     except httpx.HTTPError as exc:  # external failure must not block intake
         log.warning("geocoding failed: %s", exc)
+        runtime_health.record("geocoding", False, exc)
         return None
+    runtime_health.record("geocoding", True)
     if not results:
         return None
     loc = results[0]["geometry"]["location"]

@@ -16,11 +16,23 @@ export function DemoBadge() {
   if (error) return <span className="rounded-full bg-red-100 px-2.5 py-1 text-xs font-medium text-red-800">API unreachable</span>;
   if (!status) return <span className="rounded-full border px-2.5 py-1 text-xs text-muted-foreground">Checking API…</span>;
 
+  const all = Object.values(status.integrations);
+  const live = status.live_count ?? all.filter((i) => i.mode === "real").length;
+  const total = status.total_count ?? all.length;
+  const failing = all.some((i) => i.mode === "fallback");
+  const tone =
+    live === 0 || failing
+      ? "bg-amber-100 text-amber-900 ring-amber-300"
+      : "bg-emerald-100 text-emerald-900 ring-emerald-300";
+
   return (
     <details className="relative">
-      <summary className="flex cursor-pointer list-none items-center gap-1.5 rounded-full bg-amber-100 px-2.5 py-1 text-xs font-semibold text-amber-900 ring-1 ring-amber-300">
-        <span className="size-2 rounded-full bg-amber-500" />
-        {status.demo_mode ? "Demo mode" : "Live integrations"} · sample data
+      <summary
+        className={`flex cursor-pointer list-none items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-semibold ring-1 ${tone}`}
+        title="Which integrations are live Google services and which run in demo mode"
+      >
+        <span className={`size-2 rounded-full ${live === 0 || failing ? "bg-amber-500" : "bg-emerald-500"}`} />
+        {live === 0 ? "Demo mode" : `Live AI · ${live}/${total} integrations`} · sample data
       </summary>
       <div className="absolute right-0 z-[1000] mt-2 w-[22rem] rounded-lg border bg-popover p-3 text-xs shadow-lg">
         <p className="mb-2 font-medium">{status.data_notice}</p>
@@ -33,8 +45,14 @@ export function DemoBadge() {
             <li key={name} className="flex items-start justify-between gap-2">
               <span className="font-medium">{name.replaceAll("_", " ")}</span>
               <span className="text-right">
-                <span className={i.mode === "real" ? "text-emerald-700" : "text-amber-700"}>{i.mode}</span>
-                <span className="block text-muted-foreground">{i.mode === "real" ? i.detail : `${i.detail} · set ${i.env}`}</span>
+                <span
+                  className={
+                    i.mode === "real" ? "text-emerald-700" : i.mode === "fallback" ? "text-red-700" : "text-amber-700"
+                  }
+                >
+                  {i.mode === "real" ? "live" : i.mode}
+                </span>
+                <span className="block text-muted-foreground">{i.mode === "demo" ? `${i.detail} · set ${i.env}` : i.detail}</span>
               </span>
             </li>
           ))}

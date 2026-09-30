@@ -177,9 +177,12 @@ export type StateInfo = {
   adapter_config: string;
 };
 
-export type Integration = { mode: "real" | "demo"; env: string; detail: string };
+/** real = live Google service · demo = not configured · fallback = configured but last call failed */
+export type Integration = { mode: "real" | "demo" | "fallback"; env: string; detail: string };
 export type SystemStatus = {
   demo_mode: boolean;
+  live_count?: number;
+  total_count?: number;
   integrations: Record<string, Integration>;
   sample_data: boolean;
   synthetic_requests: number;

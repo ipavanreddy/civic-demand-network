@@ -17,7 +17,7 @@ Every reused dataset, model and library must be cited here (hackathon rule).
 | Pydantic / pydantic-settings | Library | MIT | https://docs.pydantic.dev | Canonical schema, structured-output schemas, config |
 | Google Gen AI SDK | Library | Apache-2.0 | https://github.com/googleapis/python-genai | Gemini calls (extraction, briefs, embeddings, transcription fallback) |
 | Gemini (model set by `GEMINI_MODEL`, `GEMINI_EMBEDDING_MODEL`) | Model | Gemini API ToS | https://ai.google.dev | Request understanding, evidence briefs, embeddings |
-| Cloud Speech-to-Text / Translation / Text-to-Speech | Service | Google Cloud ToS | https://cloud.google.com/speech-to-text · /translate · /text-to-speech | Voice + multilingual pipeline (`GOOGLE_API_KEY`) |
+| Cloud Speech-to-Text / Translation / Text-to-Speech | Service | Google Cloud ToS | https://cloud.google.com/speech-to-text · /translate · /text-to-speech | Voice + multilingual pipeline (`GOOGLE_CLOUD_API_KEY`) |
 | google-cloud-bigquery, google-cloud-storage, firebase-admin | Library | Apache-2.0 | https://github.com/googleapis/python-bigquery | BigQuery sink, media storage |
 | h3 (h3-py) | Library | Apache-2.0 | https://github.com/uber/h3-py | H3 hexagonal cells for hotspots |
 | httpx | Library | BSD-3-Clause | https://www.python-httpx.org | REST calls to Google APIs / Telegram |

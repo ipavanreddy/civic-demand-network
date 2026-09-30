@@ -1,6 +1,6 @@
 -- JanVaani BigQuery tables (dataset: ${BIGQUERY_DATASET}, region asia-south1).
 -- Written by services/api/app/integrations/bigquery_sink.py when USE_BIGQUERY=true.
--- Create with: bq query --use_legacy_sql=false < infrastructure/bigquery/schema.sql  (after replacing the dataset name)
+-- Create in the existing dataset (tables only): grep -v "CREATE SCHEMA" infrastructure/bigquery/schema.sql | bq query --use_legacy_sql=false --location=asia-south1
 
 CREATE SCHEMA IF NOT EXISTS civic_demand_network OPTIONS (location = 'asia-south1');
 
@@ -26,7 +26,7 @@ CREATE TABLE IF NOT EXISTS civic_demand_network.recommendations (
 );
 
 CREATE TABLE IF NOT EXISTS civic_demand_network.weight_changes (
-  at TIMESTAMP, officer STRING, reason STRING, `from` JSON, `to` JSON, scope STRING
+  `at` TIMESTAMP, officer STRING, reason STRING, `from` JSON, `to` JSON, scope STRING
 );
 
 CREATE TABLE IF NOT EXISTS civic_demand_network.decisions (
