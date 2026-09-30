@@ -53,11 +53,11 @@ Fallback if the live voice step is slow: use the demo chip *A · BR · हिन
 | Impact | 15 % | Per-capita unique-citizen demand, vulnerability weighting, investment-coverage subtraction: spending follows measured need |
 
 Live extraction evaluation (2026-09-30, `uv run python -m app.eval_extraction 40`, gemini-2.5-flash,
-prompt `extract_v1`): **100 % category accuracy on 34 live calls** (13 EN / 12 HI / 9 TE: 5 golden
-fixtures + template-labelled synthetic requests), 5/5 urgency on the golden set, 0 invented
-beneficiary counts and 0 places not present in the text. 11 of 45 calls hit Vertex AI
-`429 RESOURCE_EXHAUSTED` on the shared project quota even after retries and fell back to the
-labelled demo extractor. The synthetic requests are template text, so this is a sanity check, not a
+prompt `extract_v1`, 1.5 s between calls): **100 % category accuracy on 39 live calls** (14 EN /
+16 HI / 9 TE: 5 golden fixtures + template-labelled synthetic requests), 5/5 urgency on the golden
+set, 0 invented beneficiary counts and 0 places not present in the text. 6 of 45 calls still hit
+Vertex AI `429 RESOURCE_EXHAUSTED` on the shared project quota after retries and fell back to the
+labelled demo extractor (a first run without pacing: 34/45 live, also 100 %). The synthetic requests are template text, so this is a sanity check, not a
 field accuracy figure.
 
 ## Definition of Done (PRD §56)

@@ -235,7 +235,7 @@ def slide_ai(prs):
                 anchor=MSO_ANCHOR.MIDDLE)
         y += Inches(0.76)
     textbox(s, MARGIN, Inches(6.45), W - 2 * MARGIN, Inches(0.5),
-            "Live eval (gemini-2.5-flash, extract_v1): 100% category accuracy on 34 EN/HI/TE requests · "
+            "Live eval (gemini-2.5-flash, extract_v1): 100% category accuracy on 39 EN/HI/TE requests · "
             "0 invented numbers · 0 invented places.  Template-labelled sample, a sanity check, not a field result.",
             13, MUTED)
     notes(s, "Stress separation: observed data -> AI interpretation -> recommendation. Every AI record stores "
