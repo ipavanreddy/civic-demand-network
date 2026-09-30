@@ -30,6 +30,15 @@ def is_configured() -> bool:
     return bool(settings.gemini_api_key)
 
 
+# Shared Vertex AI quota returns short bursts of 429 RESOURCE_EXHAUSTED: retry with backoff before
+# the caller falls back to demo mode. Bounded so a citizen still gets an answer within ~15 s.
+HTTP_OPTIONS = types.HttpOptions(
+    timeout=30_000,
+    retry_options=types.HttpRetryOptions(attempts=4, initial_delay=1.0, max_delay=6.0, exp_base=2.0,
+                                         http_status_codes=[429, 500, 503, 504]),
+)
+
+
 @lru_cache
 def client() -> genai.Client:
     if settings.google_genai_use_vertexai:
@@ -41,8 +50,9 @@ def client() -> genai.Client:
             vertexai=True,
             project=settings.google_cloud_project,
             location=settings.google_cloud_location,
+            http_options=HTTP_OPTIONS,
         )
-    return genai.Client(api_key=settings.gemini_api_key)
+    return genai.Client(api_key=settings.gemini_api_key, http_options=HTTP_OPTIONS)
 
 
 def load_prompt(name: str, version: str) -> str:
