@@ -1,0 +1,5 @@
+# Lets this app install and build on its own (Vercel Root Directory = apps/officer-dashboard).
+# Only the pnpm build-script allow-list; the app has no workspace dependencies.
+allowBuilds:
+  sharp: false
+  unrs-resolver: false

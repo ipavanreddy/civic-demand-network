@@ -1,0 +1,25 @@
+# Files NOT uploaded to Cloud Build by infrastructure/cloud-run/deploy.sh (context = repo root).
+# The Docker build itself is further restricted by /.dockerignore.
+.gcloudignore
+.git/
+.gitignore
+.env
+.env.*
+**/.env
+**/.env.*
+!.env.example
+*.pem
+service-account*.json
+*-credentials.json
+node_modules/
+**/node_modules/
+apps/
+docs/
+**/.next/
+**/.venv/
+**/__pycache__/
+**/.pytest_cache/
+**/.ruff_cache/
+services/api/.data/
+services/api/tests/
+data/raw/

@@ -1,4 +1,5 @@
-export const API_URL = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8010";
+// Set in Vercel (build time). Trailing slashes are dropped so "https://…run.app/" also works.
+export const API_URL = (process.env.NEXT_PUBLIC_API_URL || "http://localhost:8010").replace(/\/+$/, "");
 
 async function check<T>(res: Response, what: string): Promise<T> {
   if (!res.ok) throw new Error(`${what} failed: ${res.status} ${await res.text()}`);

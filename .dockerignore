@@ -1,0 +1,12 @@
+# Build context is the repo root (services/api/Dockerfile). Allow-list only what the API image needs;
+# everything else (.env files, credentials, node_modules, apps/) never enters the context.
+*
+!services/api/pyproject.toml
+!services/api/uv.lock
+!services/api/app
+!ai
+!data
+**/__pycache__
+**/*.pyc
+**/.DS_Store
+data/raw

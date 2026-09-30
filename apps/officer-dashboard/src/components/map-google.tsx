@@ -17,6 +17,8 @@ type GoogleMapsNS = {
 declare global {
   interface Window {
     google?: GoogleMapsNS;
+    /** Called by the Maps JS API when the key is rejected (e.g. referrer not allowed). */
+    gm_authFailure?: () => void;
   }
 }
 
@@ -34,7 +36,15 @@ function loadGoogleMaps(key: string): Promise<GoogleMapsNS> {
   return loader;
 }
 
-export default function GoogleHotspotMap({ hotspots, recommendations, center, zoom, selected, onSelect }: MapProps) {
+export default function GoogleHotspotMap({
+  hotspots,
+  recommendations,
+  center,
+  zoom,
+  selected,
+  onSelect,
+  onFail,
+}: MapProps & { onFail?: () => void }) {
   const el = useRef<HTMLDivElement>(null);
   const map = useRef<{ panTo(c: LatLng): void; setZoom(z: number): void } | null>(null);
   const overlays = useRef<Overlay[]>([]);
@@ -42,6 +52,11 @@ export default function GoogleHotspotMap({ hotspots, recommendations, center, zo
   const [failed, setFailed] = useState(false);
 
   useEffect(() => {
+    // An invalid or referrer-restricted key loads the script fine but fails auth later.
+    window.gm_authFailure = () => {
+      setFailed(true);
+      onFail?.();
+    };
     loadGoogleMaps(process.env.NEXT_PUBLIC_MAPS_API_KEY ?? "")
       .then((google) => {
         if (el.current && !map.current) {
@@ -49,7 +64,10 @@ export default function GoogleHotspotMap({ hotspots, recommendations, center, zo
         }
         setG(google);
       })
-      .catch(() => setFailed(true));
+      .catch(() => {
+        setFailed(true);
+        onFail?.();
+      });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
