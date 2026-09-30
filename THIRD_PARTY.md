@@ -37,7 +37,8 @@ Every reused dataset, model and library must be cited here (hackathon rule).
 | uv | Tool | MIT / Apache-2.0 | https://docs.astral.sh/uv | Python packaging (also in the API image) |
 | python:3.12-slim | Container base image | PSF / Debian licences | https://hub.docker.com/_/python | API image |
 | pytest, ruff | Library (dev) | MIT | https://pytest.org · https://docs.astral.sh/ruff | Tests, linting |
-| python-pptx | Library (docs tooling) | MIT | https://github.com/scanny/python-pptx | Generates the pitch deck (`docs/pitch/build_deck.py`) |
+| PptxGenJS 4.0.1 | Library (docs tooling) | MIT | https://github.com/gitbrent/PptxGenJS | Generates the pitch deck (`docs/pitch/build-deck.js` with the Spontom `deck-kit.js`) |
+| Gemini 2.5 Flash Image (`gemini-2.5-flash-image`, Vertex AI) | Model (generated images) | Google Cloud ToS | https://cloud.google.com/vertex-ai/generative-ai/docs/models/gemini/2-5-flash-image | Illustrative photos in the pitch deck (`docs/pitch/assets/cover-gaya-river.jpg`, `citizen-voice-note.jpg`); labelled as generated on the slides. Imagen was not available on the project |
 | Playwright | Tool (dev, not committed) | Apache-2.0 | https://playwright.dev | Local screenshots / smoke checks of the UI |
 | Telegram Bot API | Service | Telegram ToS | https://core.telegram.org/bots/api | Messaging-bot channel (`TELEGRAM_BOT_TOKEN`) |
 
