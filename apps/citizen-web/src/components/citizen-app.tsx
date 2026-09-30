@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Textarea } from "@/components/ui/textarea";
+import { ChatBot } from "@/components/chat-bot";
 import { apiGet, apiPost, apiPostForm } from "@/lib/api";
 import { LANGS, STRINGS, URGENCY, type Lang } from "@/lib/i18n";
 import type { RequestView, Scenario, StateInfo, Taxonomy } from "@/lib/types";
@@ -213,6 +214,7 @@ export function CitizenApp() {
             <TabsList>
               <TabsTrigger value="type">{t.typeTab}</TabsTrigger>
               <TabsTrigger value="speak">{t.speakTab}</TabsTrigger>
+              <TabsTrigger value="chat">{t.chatTab}</TabsTrigger>
             </TabsList>
             <TabsContent value="type" className="flex flex-col gap-3">
               <Textarea
@@ -243,6 +245,9 @@ export function CitizenApp() {
                   }}
                 />
               </label>
+            </TabsContent>
+            <TabsContent value="chat">
+              <ChatBot state={stateCode} lang={lang} t={t} />
             </TabsContent>
           </Tabs>
           {error && <p className="rounded bg-red-50 px-3 py-2 text-sm text-red-800">{error}</p>}

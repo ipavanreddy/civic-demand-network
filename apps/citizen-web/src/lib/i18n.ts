@@ -48,6 +48,10 @@ const en = {
   micError: "Microphone not available — upload an audio file instead.",
   demoVoice: "Browser voice (demo mode)",
   none: "none",
+  chatTab: "Chat bot",
+  chatHint: "Same conversation as the Telegram bot: type your need and the bot replies.",
+  chatPlaceholder: "Message the JanVaani bot…",
+  chatSend: "Send",
 };
 type Dict = typeof en;
 
@@ -94,6 +98,10 @@ const hi: Dict = {
   micError: "माइक्रोफ़ोन उपलब्ध नहीं — ऑडियो फ़ाइल चुनें।",
   demoVoice: "ब्राउज़र आवाज़ (डेमो मोड)",
   none: "कोई नहीं",
+  chatTab: "चैट बॉट",
+  chatHint: "टेलीग्राम बॉट जैसी ही बातचीत: अपनी ज़रूरत लिखें, बॉट जवाब देगा।",
+  chatPlaceholder: "जनवाणी बॉट को संदेश लिखें…",
+  chatSend: "भेजें",
 };
 
 const te: Dict = {
@@ -139,6 +147,10 @@ const te: Dict = {
   micError: "మైక్రోఫోన్ అందుబాటులో లేదు — ఆడియో ఫైల్ ఎంచుకోండి.",
   demoVoice: "బ్రౌజర్ వాయిస్ (డెమో మోడ్)",
   none: "ఏదీ లేదు",
+  chatTab: "చాట్ బాట్",
+  chatHint: "టెలిగ్రామ్ బాట్ లాంటి సంభాషణ: మీ అవసరాన్ని రాయండి, బాట్ జవాబు ఇస్తుంది.",
+  chatPlaceholder: "జనవాణి బాట్‌కు సందేశం రాయండి…",
+  chatSend: "పంపండి",
 };
 
 export const STRINGS: Record<Lang, Dict> = { en, hi, te };
