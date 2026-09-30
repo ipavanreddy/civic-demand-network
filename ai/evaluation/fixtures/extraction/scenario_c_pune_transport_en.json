@@ -1,0 +1,45 @@
+{
+ "id": "scenario_c_pune_transport_en",
+ "scenario": "C",
+ "state": "MH",
+ "district": "MH.PUN",
+ "language": "en",
+ "channel": "web",
+ "demo_voice": true,
+ "text_original": "There is no direct bus from Kharadi to Hadapsar in the mornings. About 300 office workers and students wait more than 40 minutes at the EON IT Park stop every day.",
+ "text_en": "There is no direct bus from Kharadi to Hadapsar in the mornings. About 300 office workers and students wait more than 40 minutes at the EON IT Park stop every day.",
+ "expected": {
+  "category": "public_transport",
+  "sub_category": "bus_route",
+  "summary_en": "No direct morning bus from Kharadi to Hadapsar; commuters wait over 40 minutes at the EON IT Park stop.",
+  "location_mentions": [
+   {
+    "text": "Kharadi",
+    "type": "ward"
+   },
+   {
+    "text": "Hadapsar",
+    "type": "ward"
+   },
+   {
+    "text": "EON IT Park",
+    "type": "landmark"
+   }
+  ],
+  "urgency": "medium",
+  "urgency_reason": "Daily long waits for commuters; no loss of life-critical access",
+  "est_beneficiaries": 300,
+  "vulnerable_groups": [
+   "students"
+  ],
+  "seasonality": null,
+  "sentiment": -0.4,
+  "confidence": 0.9,
+  "missing_information": [
+   "preferred timings not stated"
+  ],
+  "requires_clarification": false,
+  "clarification_question": null
+ },
+ "fixture_type": "Hand-authored expected output (NOT a recorded Gemini response). Used as the demo-mode stand-in for Gemini and as a golden evaluation case (PRD §48)."
+}

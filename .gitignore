@@ -1,0 +1,22 @@
+node_modules/
+.next/
+out/
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+.env
+.env.local
+.env.*.local
+*.pem
+service-account*.json
+*-credentials.json
+.DS_Store
+.vercel
+*.tsbuildinfo
+next-env.d.ts
+data/raw/
+# JanVaani demo-mode runtime state and uploaded media (local only)
+services/api/.data/
+services/api/_bundle/

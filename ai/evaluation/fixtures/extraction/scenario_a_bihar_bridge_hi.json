@@ -1,0 +1,38 @@
+{
+ "id": "scenario_a_bihar_bridge_hi",
+ "scenario": "A",
+ "state": "BR",
+ "district": "BR.GAY",
+ "language": "hi",
+ "channel": "voice",
+ "demo_voice": true,
+ "text_original": "हमारे गाँव सोनबरसा में नदी पर पुल नहीं है। हर बरसात में बच्चे तीन महीने स्कूल नहीं जा पाते।",
+ "text_en": "Our village Sonbarsa has no bridge over the river. Every monsoon the children cannot go to school for three months.",
+ "expected": {
+  "category": "roads_bridges",
+  "sub_category": "bridge",
+  "summary_en": "No bridge over the river at Sonbarsa; children miss school for three months every monsoon.",
+  "location_mentions": [
+   {
+    "text": "Sonbarsa",
+    "type": "village"
+   }
+  ],
+  "urgency": "high",
+  "urgency_reason": "Seasonal loss of school access for children",
+  "est_beneficiaries": null,
+  "vulnerable_groups": [
+   "children"
+  ],
+  "seasonality": "monsoon",
+  "sentiment": -0.6,
+  "confidence": 0.88,
+  "missing_information": [
+   "block/district not stated",
+   "exact river crossing point not stated"
+  ],
+  "requires_clarification": false,
+  "clarification_question": null
+ },
+ "fixture_type": "Hand-authored expected output (NOT a recorded Gemini response). Used as the demo-mode stand-in for Gemini and as a golden evaluation case (PRD §48)."
+}

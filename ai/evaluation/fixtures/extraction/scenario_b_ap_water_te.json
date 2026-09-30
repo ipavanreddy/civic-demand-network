@@ -1,0 +1,39 @@
+{
+ "id": "scenario_b_ap_water_te",
+ "scenario": "B",
+ "state": "AP",
+ "district": "AP.ATP",
+ "language": "te",
+ "channel": "telegram",
+ "demo_voice": true,
+ "text_original": "మా ఊరు ముదిగల్ లో తాగునీరు లేదు. వారానికి ఒక్కసారే ట్యాంకర్ వస్తుంది. వృద్ధులు, మహిళలు రెండు కిలోమీటర్లు నడిచి నీళ్ళు తెచ్చుకుంటున్నారు.",
+ "text_en": "There is no drinking water in our village Mudigal. The tanker comes only once a week. The elderly and women walk two kilometres to fetch water.",
+ "expected": {
+  "category": "drinking_water",
+  "sub_category": "tanker_supply",
+  "summary_en": "No drinking water supply in Mudigal; tanker only once a week and residents walk two kilometres for water.",
+  "location_mentions": [
+   {
+    "text": "Mudigal",
+    "type": "village"
+   }
+  ],
+  "urgency": "high",
+  "urgency_reason": "Loss of basic drinking water access affecting women and the elderly",
+  "est_beneficiaries": null,
+  "vulnerable_groups": [
+   "elderly",
+   "women"
+  ],
+  "seasonality": null,
+  "sentiment": -0.7,
+  "confidence": 0.9,
+  "missing_information": [
+   "mandal not stated",
+   "number of affected households not stated"
+  ],
+  "requires_clarification": false,
+  "clarification_question": null
+ },
+ "fixture_type": "Hand-authored expected output (NOT a recorded Gemini response). Used as the demo-mode stand-in for Gemini and as a golden evaluation case (PRD §48)."
+}

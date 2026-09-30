@@ -1,0 +1,164 @@
+{
+  "$defs": {
+    "FactorScore": {
+      "properties": {
+        "factor": {
+          "title": "Factor",
+          "type": "string"
+        },
+        "label": {
+          "title": "Label",
+          "type": "string"
+        },
+        "raw": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Raw"
+        },
+        "normalised": {
+          "title": "Normalised",
+          "type": "number"
+        },
+        "weight": {
+          "title": "Weight",
+          "type": "number"
+        },
+        "contribution": {
+          "title": "Contribution",
+          "type": "number"
+        },
+        "explanation": {
+          "title": "Explanation",
+          "type": "string"
+        },
+        "sources": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Sources",
+          "type": "array"
+        }
+      },
+      "required": [
+        "factor",
+        "label",
+        "raw",
+        "normalised",
+        "weight",
+        "contribution",
+        "explanation"
+      ],
+      "title": "FactorScore",
+      "type": "object"
+    },
+    "Weights": {
+      "description": "Policy lens (PRD §15). Percent weights; investment is subtracted.",
+      "properties": {
+        "demand": {
+          "default": 30,
+          "maximum": 100,
+          "minimum": 0,
+          "title": "Demand",
+          "type": "number"
+        },
+        "infra_gap": {
+          "default": 30,
+          "maximum": 100,
+          "minimum": 0,
+          "title": "Infra Gap",
+          "type": "number"
+        },
+        "vulnerability": {
+          "default": 20,
+          "maximum": 100,
+          "minimum": 0,
+          "title": "Vulnerability",
+          "type": "number"
+        },
+        "trend": {
+          "default": 10,
+          "maximum": 100,
+          "minimum": 0,
+          "title": "Trend",
+          "type": "number"
+        },
+        "investment": {
+          "default": 10,
+          "maximum": 100,
+          "minimum": 0,
+          "title": "Investment",
+          "type": "number"
+        }
+      },
+      "title": "Weights",
+      "type": "object"
+    }
+  },
+  "properties": {
+    "recommendation_id": {
+      "title": "Recommendation Id",
+      "type": "string"
+    },
+    "cluster_id": {
+      "title": "Cluster Id",
+      "type": "string"
+    },
+    "rank": {
+      "title": "Rank",
+      "type": "integer"
+    },
+    "default_rank": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Default Rank"
+    },
+    "priority_score": {
+      "title": "Priority Score",
+      "type": "number"
+    },
+    "band": {
+      "enum": [
+        "High",
+        "Medium",
+        "Low"
+      ],
+      "title": "Band",
+      "type": "string"
+    },
+    "breakdown": {
+      "items": {
+        "$ref": "#/$defs/FactorScore"
+      },
+      "title": "Breakdown",
+      "type": "array"
+    },
+    "weights_used": {
+      "$ref": "#/$defs/Weights"
+    }
+  },
+  "required": [
+    "recommendation_id",
+    "cluster_id",
+    "rank",
+    "priority_score",
+    "band",
+    "breakdown",
+    "weights_used"
+  ],
+  "title": "ScoredCluster",
+  "type": "object"
+}

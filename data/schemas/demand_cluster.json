@@ -1,0 +1,112 @@
+{
+  "properties": {
+    "cluster_id": {
+      "title": "Cluster Id",
+      "type": "string"
+    },
+    "state": {
+      "title": "State",
+      "type": "string"
+    },
+    "category": {
+      "title": "Category",
+      "type": "string"
+    },
+    "sub_category": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Sub Category"
+    },
+    "lgd_district": {
+      "title": "Lgd District",
+      "type": "string"
+    },
+    "lgd_block": {
+      "title": "Lgd Block",
+      "type": "string"
+    },
+    "lgd_units": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Lgd Units",
+      "type": "array"
+    },
+    "h3_cells": {
+      "default": [],
+      "items": {
+        "type": "string"
+      },
+      "title": "H3 Cells",
+      "type": "array"
+    },
+    "request_count": {
+      "default": 0,
+      "title": "Request Count",
+      "type": "integer"
+    },
+    "unique_citizens": {
+      "default": 0,
+      "title": "Unique Citizens",
+      "type": "integer"
+    },
+    "first_seen": {
+      "anyOf": [
+        {
+          "format": "date-time",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "First Seen"
+    },
+    "last_seen": {
+      "anyOf": [
+        {
+          "format": "date-time",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Last Seen"
+    },
+    "summary": {
+      "title": "Summary",
+      "type": "string"
+    },
+    "status": {
+      "default": "Clustered",
+      "title": "Status",
+      "type": "string"
+    },
+    "is_synthetic": {
+      "default": false,
+      "title": "Is Synthetic",
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "cluster_id",
+    "state",
+    "category",
+    "lgd_district",
+    "lgd_block",
+    "lgd_units",
+    "summary"
+  ],
+  "title": "DemandCluster",
+  "type": "object"
+}

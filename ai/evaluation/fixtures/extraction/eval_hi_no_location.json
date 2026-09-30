@@ -1,0 +1,29 @@
+{
+ "id": "eval_hi_no_location",
+ "scenario": "eval",
+ "state": "BR",
+ "district": null,
+ "language": "hi",
+ "channel": "web",
+ "text_original": "हमारे यहाँ बिजली दिन में चार घंटे ही आती है।",
+ "text_en": "We get electricity for only four hours a day here.",
+ "expected": {
+  "category": "electricity",
+  "sub_category": "supply",
+  "summary_en": "Electricity supply only four hours a day; location not stated.",
+  "location_mentions": [],
+  "urgency": "medium",
+  "urgency_reason": "Poor electricity supply",
+  "est_beneficiaries": null,
+  "vulnerable_groups": [],
+  "seasonality": null,
+  "sentiment": -0.5,
+  "confidence": 0.55,
+  "missing_information": [
+   "location not stated"
+  ],
+  "requires_clarification": true,
+  "clarification_question": "यह समस्या किस गाँव या वार्ड की है?"
+ },
+ "fixture_type": "Hand-authored expected output (NOT a recorded Gemini response). Used as the demo-mode stand-in for Gemini and as a golden evaluation case (PRD §48)."
+}

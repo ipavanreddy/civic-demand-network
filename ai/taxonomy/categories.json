@@ -1,0 +1,97 @@
+{
+  "version": "v1",
+  "note": "Fixed MVP category taxonomy (PRD §11). gap_indicator names the canonical indicator used for the Infrastructure Gap factor (PRD §15). keywords are used only by the demo-mode rule extractor.",
+  "categories": [
+    {
+      "id": "roads_bridges",
+      "label": {"en": "Roads & Bridges", "hi": "सड़क और पुल", "te": "రోడ్లు & వంతెనలు"},
+      "gap_indicator": {"name": "all_weather_road_access", "kind": "bool_good"},
+      "sub_keywords": {
+        "bridge": ["bridge", "river crossing", "causeway", "पुल", "पुलिया", "नदी", "river", "వంతెన", "నది"],
+        "rural_road": ["road", "pothole", "kutcha", "सड़क", "रास्ता", "రోడ్డు", "రహదారి", "దారి"]
+      }
+    },
+    {
+      "id": "drinking_water",
+      "label": {"en": "Drinking Water", "hi": "पेयजल", "te": "తాగునీరు"},
+      "gap_indicator": {"name": "tap_water_coverage_pct", "kind": "pct_good"},
+      "sub_keywords": {
+        "handpump_repair": ["handpump", "hand pump", "हैंडपंप", "चापाकल"],
+        "tanker_supply": ["tanker", "टैंकर", "ట్యాంకర్"],
+        "fluoride_free_water": ["fluoride", "फ्लोराइड", "ఫ్లోరైడ్"],
+        "piped_supply": ["drinking water", "water", "tap", "borewell", "पानी", "पेयजल", "नल", "నీరు", "నీళ్ళు", "తాగునీరు", "బోరు", "కుళాయి"]
+      }
+    },
+    {
+      "id": "sanitation",
+      "label": {"en": "Sanitation", "hi": "स्वच्छता", "te": "పారిశుధ్యం"},
+      "gap_indicator": {"name": "sewer_connection_pct", "kind": "pct_good"},
+      "sub_keywords": {
+        "drainage": ["drain", "drainage", "sewage", "sewer", "नाली", "మురుగు", "డ్రైనేజీ"],
+        "toilets": ["toilet", "शौचालय", "మరుగుదొడ్డి"],
+        "solid_waste": ["garbage", "waste", "कचरा", "गंदगी", "చెత్త"]
+      }
+    },
+    {
+      "id": "electricity",
+      "label": {"en": "Electricity", "hi": "बिजली", "te": "విద్యుత్"},
+      "gap_indicator": {"name": "households_electrified_pct", "kind": "pct_good"},
+      "sub_keywords": {
+        "transformer": ["transformer", "ट्रांसफार्मर", "ట్రాన్స్‌ఫార్మర్"],
+        "streetlights": ["streetlight", "street light", "street lights", "streetlights"],
+        "supply": ["electricity", "power cut", "voltage", "बिजली", "लाइट", "కరెంటు", "విద్యుత్"]
+      }
+    },
+    {
+      "id": "health_facility",
+      "label": {"en": "Health Facility", "hi": "स्वास्थ्य सुविधा", "te": "ఆరోగ్య సదుపాయం"},
+      "gap_indicator": {"name": "distance_to_phc_km", "kind": "distance_bad", "full_gap_at": 15},
+      "sub_keywords": {
+        "ambulance": ["ambulance", "एम्बुलेंस", "అంబులెన్స్"],
+        "phc": ["hospital", "health centre", "health center", "phc", "clinic", "doctor", "अस्पताल", "स्वास्थ्य केंद्र", "डॉक्टर", "ఆసుపత్రి", "డాక్టర్", "ఆరోగ్య కేంద్రం"]
+      }
+    },
+    {
+      "id": "school_education",
+      "label": {"en": "School Education", "hi": "स्कूल शिक्षा", "te": "పాఠశాల విద్య"},
+      "gap_indicator": {"name": "secondary_school_within_5km", "kind": "bool_good"},
+      "sub_keywords": {
+        "classrooms": ["classroom", "classrooms", "कक्षा", "తరగతి గదులు"],
+        "secondary_school": ["high school", "school", "teacher", "college", "स्कूल", "विद्यालय", "शिक्षक", "పాఠశాల", "బడి", "స్కూల్"]
+      }
+    },
+    {
+      "id": "digital_connectivity",
+      "label": {"en": "Digital Connectivity", "hi": "डिजिटल कनेक्टिविटी", "te": "డిజిటల్ కనెక్టివిటీ"},
+      "gap_indicator": null,
+      "sub_keywords": {"mobile_network": ["mobile network", "internet", "signal", "network", "नेटवर्क", "इंटरनेट", "सिग्नल", "నెట్‌వర్క్", "ఇంటర్నెట్", "సిగ్నల్"]}
+    },
+    {
+      "id": "housing",
+      "label": {"en": "Housing", "hi": "आवास", "te": "గృహనిర్మాణం"},
+      "gap_indicator": null,
+      "sub_keywords": {"housing": ["housing", "house", "shelter", "आवास", "मकान", "ఇల్లు", "గృహ"]}
+    },
+    {
+      "id": "irrigation",
+      "label": {"en": "Irrigation", "hi": "सिंचाई", "te": "నీటిపారుదల"},
+      "gap_indicator": {"name": "irrigated_area_pct", "kind": "pct_good"},
+      "sub_keywords": {"check_dam": ["irrigation", "canal", "check dam", "crops", "सिंचाई", "नहर", "సాగునీరు", "కాలువ", "చెరువు", "పంటలు"]}
+    },
+    {
+      "id": "public_transport",
+      "label": {"en": "Public Transport", "hi": "सार्वजनिक परिवहन", "te": "ప్రజా రవాణా"},
+      "gap_indicator": {"name": "pop_within_500m_bus_stop_pct", "kind": "pct_good"},
+      "sub_keywords": {
+        "last_mile": ["bus stop", "last mile", "feeder", "walking distance"],
+        "bus_route": ["bus", "metro", "route", "transport", "बस", "मेट्रो", "परिवहन", "బస్సు", "బస్", "రవాణా"]
+      }
+    },
+    {
+      "id": "other",
+      "label": {"en": "Other", "hi": "अन्य", "te": "ఇతర"},
+      "gap_indicator": null,
+      "sub_keywords": {}
+    }
+  ]
+}

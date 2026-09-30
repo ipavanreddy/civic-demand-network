@@ -1,0 +1,62 @@
+{
+  "properties": {
+    "lgd_code": {
+      "title": "Lgd Code",
+      "type": "string"
+    },
+    "indicator_name": {
+      "title": "Indicator Name",
+      "type": "string"
+    },
+    "value": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "boolean"
+        }
+      ],
+      "title": "Value"
+    },
+    "year": {
+      "title": "Year",
+      "type": "integer"
+    },
+    "geographic_level": {
+      "title": "Geographic Level",
+      "type": "string"
+    },
+    "source": {
+      "title": "Source",
+      "type": "string"
+    },
+    "definition": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Definition"
+    },
+    "is_sample": {
+      "default": true,
+      "title": "Is Sample",
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "lgd_code",
+    "indicator_name",
+    "value",
+    "year",
+    "geographic_level",
+    "source"
+  ],
+  "title": "Indicator",
+  "type": "object"
+}

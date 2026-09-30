@@ -1,0 +1,9 @@
+ward_no,ward_name,ward_name_mr,corporation,corporation_code,district,district_code,lat,lng,population_2011,slum_population_pct,literacy_pct,pop_within_500m_bus_stop_pct,sewer_connection_pct,households_piped_water_pct,water_supply_hours,data_year
+PMC-W04,Kharadi,खराडी,Pune Municipal Corporation,MH.PUN.PMC,Pune,MH.PUN,18.551,73.941,72000,12,89,38,70,88,4,2024
+PMC-W22,Hadapsar,हडपसर,Pune Municipal Corporation,MH.PUN.PMC,Pune,MH.PUN,18.502,73.927,145000,22,86,61,74,90,3,2024
+PMC-W03,Wagholi,वाघोली,Pune Municipal Corporation,MH.PUN.PMC,Pune,MH.PUN,18.58,73.983,65000,18,84,22,45,62,2,2024
+PMC-W26,Kondhwa,कोंढवा,Pune Municipal Corporation,MH.PUN.PMC,Pune,MH.PUN,18.47,73.89,110000,26,83,55,52,81,3,2024
+PMC-W06,Yerawada,येरवडा,Pune Municipal Corporation,MH.PUN.PMC,Pune,MH.PUN,18.553,73.887,98000,41,78,70,60,85,4,2024
+PMC-W31,Kothrud,कोथरूड,Pune Municipal Corporation,MH.PUN.PMC,Pune,MH.PUN,18.507,73.807,120000,6,94,82,90,97,5,2024
+PCMC-W02,Moshi,मोशी,Pimpri-Chinchwad Municipal Corporation,MH.PUN.PCMC,Pune,MH.PUN,18.671,73.851,58000,15,85,30,50,70,2,2024
+PCMC-W01,Chikhli,चिखली,Pimpri-Chinchwad Municipal Corporation,MH.PUN.PCMC,Pune,MH.PUN,18.681,73.811,76000,24,82,44,48,66,1,2024

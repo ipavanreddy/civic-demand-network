@@ -1,0 +1,164 @@
+{
+  "$defs": {
+    "LocationMention": {
+      "properties": {
+        "text": {
+          "description": "Place name exactly as written or spoken by the citizen",
+          "title": "Text",
+          "type": "string"
+        },
+        "type": {
+          "enum": [
+            "village",
+            "ward",
+            "block",
+            "mandal",
+            "district",
+            "city",
+            "landmark",
+            "other"
+          ],
+          "title": "Type",
+          "type": "string"
+        }
+      },
+      "required": [
+        "text",
+        "type"
+      ],
+      "title": "LocationMention",
+      "type": "object"
+    }
+  },
+  "description": "Gemini request-understanding output (prompt: ai/prompts/extract_v1.md).",
+  "properties": {
+    "category": {
+      "enum": [
+        "roads_bridges",
+        "drinking_water",
+        "sanitation",
+        "electricity",
+        "health_facility",
+        "school_education",
+        "digital_connectivity",
+        "housing",
+        "irrigation",
+        "public_transport",
+        "other"
+      ],
+      "title": "Category",
+      "type": "string"
+    },
+    "sub_category": {
+      "title": "Sub Category",
+      "type": "string"
+    },
+    "summary_en": {
+      "title": "Summary En",
+      "type": "string"
+    },
+    "location_mentions": {
+      "items": {
+        "$ref": "#/$defs/LocationMention"
+      },
+      "title": "Location Mentions",
+      "type": "array"
+    },
+    "urgency": {
+      "enum": [
+        "low",
+        "medium",
+        "high",
+        "critical"
+      ],
+      "title": "Urgency",
+      "type": "string"
+    },
+    "urgency_reason": {
+      "title": "Urgency Reason",
+      "type": "string"
+    },
+    "est_beneficiaries": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "description": "Only if a number is explicitly stated; else null",
+      "title": "Est Beneficiaries"
+    },
+    "vulnerable_groups": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Vulnerable Groups",
+      "type": "array"
+    },
+    "seasonality": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Seasonality"
+    },
+    "sentiment": {
+      "maximum": 1,
+      "minimum": -1,
+      "title": "Sentiment",
+      "type": "number"
+    },
+    "confidence": {
+      "maximum": 1,
+      "minimum": 0,
+      "title": "Confidence",
+      "type": "number"
+    },
+    "missing_information": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Missing Information",
+      "type": "array"
+    },
+    "requires_clarification": {
+      "title": "Requires Clarification",
+      "type": "boolean"
+    },
+    "clarification_question": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Clarification Question"
+    }
+  },
+  "required": [
+    "category",
+    "sub_category",
+    "summary_en",
+    "location_mentions",
+    "urgency",
+    "urgency_reason",
+    "est_beneficiaries",
+    "vulnerable_groups",
+    "seasonality",
+    "sentiment",
+    "confidence",
+    "missing_information",
+    "requires_clarification"
+  ],
+  "title": "RequestExtraction",
+  "type": "object"
+}

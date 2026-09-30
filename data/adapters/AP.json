@@ -1,0 +1,48 @@
+{
+  "state_code": "AP",
+  "lgd_state_code": "28",
+  "name": "Andhra Pradesh",
+  "name_local": "ఆంధ్ర ప్రదేశ్",
+  "languages": ["te", "en"],
+  "default_language": "te",
+  "focus_categories": ["drinking_water"],
+  "unit_level": "habitation",
+  "level_labels": {"district": "District (జిల్లా)", "block": "Mandal (మండలం)", "unit": "Habitation (ఆవాసం)"},
+  "channels": ["web", "voice", "telegram"],
+  "map_center": [14.95, 77.35],
+  "units": {
+    "file": "states/AP/ap_habitation_indicators.json",
+    "format": "json",
+    "records_path": "habitations",
+    "fields": {
+      "district_code": "district.code", "district_name": "district.name",
+      "block_code": "mandal.code", "block_name": "mandal.name",
+      "unit_code": "habitation.code", "unit_name": "habitation.name", "unit_name_local": "habitation.name_te",
+      "lat": "location.lat", "lng": "location.lon"
+    }
+  },
+  "indicators": [
+    {"canonical": "population", "columns": ["census_2011_population"], "transform": "int", "year": 2011, "source": "Census 2011 PCA (sample values)"},
+    {"canonical": "disadvantaged_population_pct", "columns": ["sc_pct", "st_pct"], "transform": "sum", "year": 2011, "source": "Census 2011 SC + ST share (sample values)", "definition": "SC + ST share of population (adapter sums two state columns)"},
+    {"canonical": "literacy_rate_pct", "columns": ["literacy_pct"], "transform": "float", "year": 2011, "source": "Census 2011 literacy (sample values)"},
+    {"canonical": "tap_water_coverage_pct", "columns": ["fhtc_coverage_pct"], "transform": "float", "year_column": "ref_year", "source": "JJM functional household tap connections (synthetic sample)"},
+    {"canonical": "irrigated_area_pct", "columns": ["irrigated_area_pct"], "transform": "float", "year_column": "ref_year", "source": "AP irrigation statistics (synthetic sample)"},
+    {"canonical": "distance_to_phc_km", "columns": ["phc_distance_km"], "transform": "float", "year_column": "ref_year", "source": "AP health facility registry (synthetic sample)"}
+  ],
+  "value_maps": {},
+  "investments": {
+    "file": "states/AP/ap_jjm_works.csv",
+    "format": "csv",
+    "fields": {
+      "project_id": "work_id", "scheme": "scheme", "title": "component", "category": "scheme",
+      "block_code": "mandal_code", "unit_codes": "habitation_codes", "status": "work_status",
+      "amount": "est_cost_crore", "start_date": "sanction_date", "population_covered": "households_covered"
+    },
+    "list_separator": ";",
+    "amount_multiplier": 10000000,
+    "population_multiplier": 4.2,
+    "category_map": {"Jal Jeevan Mission": "drinking_water", "Samagra Shiksha": "school_education", "PMKSY": "irrigation"},
+    "status_map": {"Not Started": "sanctioned", "Grounded": "ongoing", "Completed": "completed"},
+    "source": "AP JJM / scheme works list (synthetic sample)"
+  }
+}

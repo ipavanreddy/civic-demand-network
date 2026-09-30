@@ -1,0 +1,89 @@
+{
+ "dataset_version": "sample-v1",
+ "generated_by": "data/transformations/generate_sample.py",
+ "seed": 20260928,
+ "as_of": "2026-09-28T12:00:00+05:30",
+ "notice": "ALL FILES ARE SYNTHETIC SAMPLE DATA for the hackathon demo. Codes are LGD-style sample codes, not official LGD codes. Values are illustrative, not real statistics.",
+ "datasets": [
+  {
+   "path": "states/BR/bihar_village_indicators.csv",
+   "source": "Synthetic sample in the style of Census 2011 PCA + Bihar rural MIS",
+   "reference_timestamp": "2024",
+   "dataset_version": "sample-v1",
+   "geographic_scope": "Bihar: Gaya, Aurangabad (villages)",
+   "is_sample": true,
+   "is_synthetic": true,
+   "generated_by": "data/transformations/generate_sample.py"
+  },
+  {
+   "path": "states/BR/bihar_yojana_suchi.csv",
+   "source": "Synthetic sample scheme list (PMGSY / Har Ghar Nal Jal style)",
+   "reference_timestamp": "2025",
+   "dataset_version": "sample-v1",
+   "geographic_scope": "Bihar: Gaya (blocks)",
+   "is_sample": true,
+   "is_synthetic": true,
+   "generated_by": "data/transformations/generate_sample.py"
+  },
+  {
+   "path": "states/AP/ap_habitation_indicators.json",
+   "source": "Synthetic sample in the style of AP RWS&S habitation MIS",
+   "reference_timestamp": "2025",
+   "dataset_version": "sample-v1",
+   "geographic_scope": "Andhra Pradesh: Anantapur, Kurnool (habitations)",
+   "is_sample": true,
+   "is_synthetic": true,
+   "generated_by": "data/transformations/generate_sample.py"
+  },
+  {
+   "path": "states/AP/ap_jjm_works.csv",
+   "source": "Synthetic sample JJM works list",
+   "reference_timestamp": "2026",
+   "dataset_version": "sample-v1",
+   "geographic_scope": "Andhra Pradesh (mandals)",
+   "is_sample": true,
+   "is_synthetic": true,
+   "generated_by": "data/transformations/generate_sample.py"
+  },
+  {
+   "path": "states/MH/pune_ward_stats.csv",
+   "source": "Synthetic sample ward statistics (PMC / PCMC style)",
+   "reference_timestamp": "2024",
+   "dataset_version": "sample-v1",
+   "geographic_scope": "Maharashtra: Pune urban wards",
+   "is_sample": true,
+   "is_synthetic": true,
+   "generated_by": "data/transformations/generate_sample.py"
+  },
+  {
+   "path": "states/MH/pune_capex_projects.csv",
+   "source": "Synthetic sample municipal capital-works list",
+   "reference_timestamp": "2026",
+   "dataset_version": "sample-v1",
+   "geographic_scope": "Maharashtra: Pune urban wards",
+   "is_sample": true,
+   "is_synthetic": true,
+   "generated_by": "data/transformations/generate_sample.py"
+  },
+  {
+   "path": "requests_synthetic.jsonl",
+   "source": "Template-generated multilingual citizen requests (no AI used)",
+   "reference_timestamp": "2026-09-28T12:00:00+05:30",
+   "dataset_version": "sample-v1",
+   "geographic_scope": "BR, AP, MH sample areas",
+   "is_sample": true,
+   "is_synthetic": true,
+   "generated_by": "data/transformations/generate_sample.py"
+  },
+  {
+   "path": "clusters_synthetic.json",
+   "source": "Seed demand clusters for the synthetic requests",
+   "reference_timestamp": "2026-09-28T12:00:00+05:30",
+   "dataset_version": "sample-v1",
+   "geographic_scope": "BR, AP, MH sample areas",
+   "is_sample": true,
+   "is_synthetic": true,
+   "generated_by": "data/transformations/generate_sample.py"
+  }
+ ]
+}

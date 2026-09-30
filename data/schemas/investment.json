@@ -1,0 +1,97 @@
+{
+  "properties": {
+    "project_id": {
+      "title": "Project Id",
+      "type": "string"
+    },
+    "scheme": {
+      "title": "Scheme",
+      "type": "string"
+    },
+    "title": {
+      "title": "Title",
+      "type": "string"
+    },
+    "category": {
+      "enum": [
+        "roads_bridges",
+        "drinking_water",
+        "sanitation",
+        "electricity",
+        "health_facility",
+        "school_education",
+        "digital_connectivity",
+        "housing",
+        "irrigation",
+        "public_transport",
+        "other"
+      ],
+      "title": "Category",
+      "type": "string"
+    },
+    "lgd_codes": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Lgd Codes",
+      "type": "array"
+    },
+    "block_code": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Block Code"
+    },
+    "status": {
+      "enum": [
+        "proposed",
+        "sanctioned",
+        "ongoing",
+        "completed"
+      ],
+      "title": "Status",
+      "type": "string"
+    },
+    "sanctioned_amount_inr": {
+      "title": "Sanctioned Amount Inr",
+      "type": "number"
+    },
+    "start_date": {
+      "title": "Start Date",
+      "type": "string"
+    },
+    "population_covered": {
+      "title": "Population Covered",
+      "type": "integer"
+    },
+    "source": {
+      "title": "Source",
+      "type": "string"
+    },
+    "is_sample": {
+      "default": true,
+      "title": "Is Sample",
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "project_id",
+    "scheme",
+    "title",
+    "category",
+    "lgd_codes",
+    "block_code",
+    "status",
+    "sanctioned_amount_inr",
+    "start_date",
+    "population_covered",
+    "source"
+  ],
+  "title": "Investment",
+  "type": "object"
+}

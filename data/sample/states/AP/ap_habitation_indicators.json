@@ -1,0 +1,229 @@
+{
+ "_meta": {
+  "source": "Synthetic sample in the style of AP RWS&S habitation MIS",
+  "reference_timestamp": "2025-03-31",
+  "dataset_version": "sample-v1",
+  "geographic_scope": "Andhra Pradesh: Anantapur, Kurnool",
+  "is_sample": true,
+  "is_synthetic": true,
+  "generated_by": "data/transformations/generate_sample.py"
+ },
+ "habitations": [
+  {
+   "district": {
+    "name": "Anantapur",
+    "code": "AP.ATP"
+   },
+   "mandal": {
+    "name": "Kalyandurg",
+    "code": "AP.ATP.KDG"
+   },
+   "habitation": {
+    "name": "Mudigal",
+    "name_te": "ముదిగల్",
+    "code": "AP.ATP.KDG.MDG"
+   },
+   "location": {
+    "lat": 14.601,
+    "lon": 77.083
+   },
+   "census_2011_population": 4600,
+   "sc_pct": 18,
+   "st_pct": 6,
+   "literacy_pct": 54,
+   "fhtc_coverage_pct": 28,
+   "irrigated_area_pct": 22,
+   "phc_distance_km": 8,
+   "ref_year": 2025
+  },
+  {
+   "district": {
+    "name": "Anantapur",
+    "code": "AP.ATP"
+   },
+   "mandal": {
+    "name": "Kalyandurg",
+    "code": "AP.ATP.KDG"
+   },
+   "habitation": {
+    "name": "Varli",
+    "name_te": "వర్లి",
+    "code": "AP.ATP.KDG.VRL"
+   },
+   "location": {
+    "lat": 14.522,
+    "lon": 77.151
+   },
+   "census_2011_population": 2100,
+   "sc_pct": 22,
+   "st_pct": 9,
+   "literacy_pct": 50,
+   "fhtc_coverage_pct": 21,
+   "irrigated_area_pct": 18,
+   "phc_distance_km": 12,
+   "ref_year": 2025
+  },
+  {
+   "district": {
+    "name": "Anantapur",
+    "code": "AP.ATP"
+   },
+   "mandal": {
+    "name": "Dharmavaram",
+    "code": "AP.ATP.DMV"
+   },
+   "habitation": {
+    "name": "Chigicherla",
+    "name_te": "చిగిచెర్ల",
+    "code": "AP.ATP.DMV.CGC"
+   },
+   "location": {
+    "lat": 14.452,
+    "lon": 77.701
+   },
+   "census_2011_population": 3800,
+   "sc_pct": 20,
+   "st_pct": 4,
+   "literacy_pct": 58,
+   "fhtc_coverage_pct": 35,
+   "irrigated_area_pct": 30,
+   "phc_distance_km": 7,
+   "ref_year": 2025
+  },
+  {
+   "district": {
+    "name": "Anantapur",
+    "code": "AP.ATP"
+   },
+   "mandal": {
+    "name": "Dharmavaram",
+    "code": "AP.ATP.DMV"
+   },
+   "habitation": {
+    "name": "Pothukunta",
+    "name_te": "పోతుకుంట",
+    "code": "AP.ATP.DMV.PTK"
+   },
+   "location": {
+    "lat": 14.398,
+    "lon": 77.752
+   },
+   "census_2011_population": 1900,
+   "sc_pct": 25,
+   "st_pct": 5,
+   "literacy_pct": 55,
+   "fhtc_coverage_pct": 30,
+   "irrigated_area_pct": 26,
+   "phc_distance_km": 9,
+   "ref_year": 2025
+  },
+  {
+   "district": {
+    "name": "Anantapur",
+    "code": "AP.ATP"
+   },
+   "mandal": {
+    "name": "Rayadurg",
+    "code": "AP.ATP.RYD"
+   },
+   "habitation": {
+    "name": "Kanekal",
+    "name_te": "కణేకల్",
+    "code": "AP.ATP.RYD.KNK"
+   },
+   "location": {
+    "lat": 14.871,
+    "lon": 76.931
+   },
+   "census_2011_population": 7200,
+   "sc_pct": 17,
+   "st_pct": 3,
+   "literacy_pct": 57,
+   "fhtc_coverage_pct": 62,
+   "irrigated_area_pct": 24,
+   "phc_distance_km": 5,
+   "ref_year": 2025
+  },
+  {
+   "district": {
+    "name": "Anantapur",
+    "code": "AP.ATP"
+   },
+   "mandal": {
+    "name": "Gooty",
+    "code": "AP.ATP.GTY"
+   },
+   "habitation": {
+    "name": "Gooty",
+    "name_te": "గుత్తి",
+    "code": "AP.ATP.GTY.GTY"
+   },
+   "location": {
+    "lat": 15.121,
+    "lon": 77.631
+   },
+   "census_2011_population": 48000,
+   "sc_pct": 15,
+   "st_pct": 3,
+   "literacy_pct": 70,
+   "fhtc_coverage_pct": 71,
+   "irrigated_area_pct": 35,
+   "phc_distance_km": 2,
+   "ref_year": 2025
+  },
+  {
+   "district": {
+    "name": "Kurnool",
+    "code": "AP.KNL"
+   },
+   "mandal": {
+    "name": "Pattikonda",
+    "code": "AP.KNL.PTK"
+   },
+   "habitation": {
+    "name": "Hosur",
+    "name_te": "హోసూరు",
+    "code": "AP.KNL.PTK.HSR"
+   },
+   "location": {
+    "lat": 15.421,
+    "lon": 77.502
+   },
+   "census_2011_population": 3500,
+   "sc_pct": 21,
+   "st_pct": 2,
+   "literacy_pct": 49,
+   "fhtc_coverage_pct": 25,
+   "irrigated_area_pct": 20,
+   "phc_distance_km": 10,
+   "ref_year": 2025
+  },
+  {
+   "district": {
+    "name": "Kurnool",
+    "code": "AP.KNL"
+   },
+   "mandal": {
+    "name": "Adoni",
+    "code": "AP.KNL.ADN"
+   },
+   "habitation": {
+    "name": "Pedda Harivanam",
+    "name_te": "పెద్ద హరివాణం",
+    "code": "AP.KNL.ADN.PHV"
+   },
+   "location": {
+    "lat": 15.591,
+    "lon": 77.201
+   },
+   "census_2011_population": 8900,
+   "sc_pct": 19,
+   "st_pct": 1,
+   "literacy_pct": 46,
+   "fhtc_coverage_pct": 58,
+   "irrigated_area_pct": 28,
+   "phc_distance_km": 6,
+   "ref_year": 2025
+  }
+ ]
+}

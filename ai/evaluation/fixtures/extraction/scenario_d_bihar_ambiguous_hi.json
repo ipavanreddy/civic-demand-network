@@ -1,0 +1,34 @@
+{
+ "id": "scenario_d_bihar_ambiguous_hi",
+ "scenario": "A-clarify",
+ "state": "BR",
+ "district": "BR.GAY",
+ "language": "hi",
+ "channel": "web",
+ "text_original": "रामपुर गाँव में पीने का पानी नहीं है, हैंडपंप खराब पड़ा है।",
+ "text_en": "There is no drinking water in Rampur village; the handpump is broken.",
+ "expected": {
+  "category": "drinking_water",
+  "sub_category": "handpump_repair",
+  "summary_en": "No drinking water in Rampur village because the handpump is broken.",
+  "location_mentions": [
+   {
+    "text": "Rampur",
+    "type": "village"
+   }
+  ],
+  "urgency": "high",
+  "urgency_reason": "Loss of drinking water access",
+  "est_beneficiaries": null,
+  "vulnerable_groups": [],
+  "seasonality": null,
+  "sentiment": -0.6,
+  "confidence": 0.8,
+  "missing_information": [
+   "block not stated (several villages are named Rampur)"
+  ],
+  "requires_clarification": false,
+  "clarification_question": null
+ },
+ "fixture_type": "Hand-authored expected output (NOT a recorded Gemini response). Used as the demo-mode stand-in for Gemini and as a golden evaluation case (PRD §48)."
+}

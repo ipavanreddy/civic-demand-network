@@ -1,0 +1,115 @@
+{
+  "$defs": {
+    "DataEvidence": {
+      "properties": {
+        "claim": {
+          "title": "Claim",
+          "type": "string"
+        },
+        "field": {
+          "title": "Field",
+          "type": "string"
+        },
+        "value": {
+          "title": "Value",
+          "type": "string"
+        },
+        "source": {
+          "title": "Source",
+          "type": "string"
+        },
+        "year": {
+          "title": "Year",
+          "type": "string"
+        }
+      },
+      "required": [
+        "claim",
+        "field",
+        "value",
+        "source",
+        "year"
+      ],
+      "title": "DataEvidence",
+      "type": "object"
+    }
+  },
+  "description": "Gemini evidence-brief output (prompt: ai/prompts/evidence_brief_v1.md).",
+  "properties": {
+    "title": {
+      "title": "Title",
+      "type": "string"
+    },
+    "summary": {
+      "title": "Summary",
+      "type": "string"
+    },
+    "demand_evidence": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Demand Evidence",
+      "type": "array"
+    },
+    "data_evidence": {
+      "items": {
+        "$ref": "#/$defs/DataEvidence"
+      },
+      "title": "Data Evidence",
+      "type": "array"
+    },
+    "investment_context": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Investment Context",
+      "type": "array"
+    },
+    "estimated_beneficiaries": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Estimated Beneficiaries"
+    },
+    "beneficiaries_basis": {
+      "title": "Beneficiaries Basis",
+      "type": "string"
+    },
+    "uncertainties": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Uncertainties",
+      "type": "array"
+    },
+    "next_step": {
+      "title": "Next Step",
+      "type": "string"
+    },
+    "confidence": {
+      "maximum": 1,
+      "minimum": 0,
+      "title": "Confidence",
+      "type": "number"
+    }
+  },
+  "required": [
+    "title",
+    "summary",
+    "demand_evidence",
+    "data_evidence",
+    "investment_context",
+    "estimated_beneficiaries",
+    "beneficiaries_basis",
+    "uncertainties",
+    "next_step",
+    "confidence"
+  ],
+  "title": "EvidenceBrief",
+  "type": "object"
+}

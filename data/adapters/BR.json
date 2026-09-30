@@ -1,0 +1,51 @@
+{
+  "state_code": "BR",
+  "lgd_state_code": "10",
+  "name": "Bihar",
+  "name_local": "बिहार",
+  "languages": ["hi", "en"],
+  "default_language": "hi",
+  "focus_categories": ["roads_bridges", "drinking_water"],
+  "unit_level": "village",
+  "level_labels": {"district": "District (जिला)", "block": "Block (प्रखंड)", "unit": "Village (ग्राम)"},
+  "channels": ["web", "voice", "telegram"],
+  "map_center": [24.75, 84.75],
+  "units": {
+    "file": "states/BR/bihar_village_indicators.csv",
+    "format": "csv",
+    "fields": {
+      "district_code": "jila_code", "district_name": "jila_naam",
+      "block_code": "prakhand_code", "block_name": "prakhand_naam",
+      "unit_code": "gram_code", "unit_name": "gram_naam", "unit_name_local": "gram_naam_hindi",
+      "lat": "akshansh", "lng": "deshantar"
+    }
+  },
+  "indicators": [
+    {"canonical": "population", "columns": ["jansankhya_2011"], "transform": "int", "year": 2011, "source": "Census 2011 PCA (sample values)"},
+    {"canonical": "disadvantaged_population_pct", "columns": ["anusuchit_jati_janjati_pratishat"], "transform": "float", "year": 2011, "source": "Census 2011 SC/ST share (sample values)", "definition": "SC + ST share of population"},
+    {"canonical": "literacy_rate_pct", "columns": ["saksharta_dar"], "transform": "float", "year": 2011, "source": "Census 2011 literacy (sample values)"},
+    {"canonical": "all_weather_road_access", "columns": ["barahmasi_sadak"], "transform": "yes_no", "year_column": "sandarbh_varsh", "source": "Bihar rural road inventory (synthetic sample)"},
+    {"canonical": "tap_water_coverage_pct", "columns": ["nal_jal_pratishat"], "transform": "float", "year_column": "sandarbh_varsh", "source": "Har Ghar Nal Jal MIS (synthetic sample)"},
+    {"canonical": "households_electrified_pct", "columns": ["vidyut_parivar_pratishat"], "transform": "float", "year_column": "sandarbh_varsh", "source": "Bihar DISCOM village electrification (synthetic sample)"},
+    {"canonical": "distance_to_phc_km", "columns": ["phc_doori_km"], "transform": "float", "year_column": "sandarbh_varsh", "source": "Bihar health facility registry (synthetic sample)"},
+    {"canonical": "secondary_school_within_5km", "columns": ["madhyamik_vidyalay_5km"], "transform": "yes_no", "year_column": "sandarbh_varsh", "source": "UDISE+ style school mapping (synthetic sample)"},
+    {"canonical": "aspirational_district", "columns": ["aakankshi_jila"], "transform": "bool01", "year": 2018, "source": "NITI Aayog Aspirational Districts Programme list (sample flag)", "level": "district"}
+  ],
+  "value_maps": {"yes_no": {"haan": true, "nahi": false}},
+  "investments": {
+    "file": "states/BR/bihar_yojana_suchi.csv",
+    "format": "csv",
+    "fields": {
+      "project_id": "yojana_id", "title": "yojana_naam", "category": "shreni", "block_code": "prakhand_code",
+      "unit_codes": "gram_codes", "status": "sthiti", "amount": "rashi_lakh", "start_date": "aarambh_tithi",
+      "population_covered": "labharthi_jansankhya"
+    },
+    "list_separator": ";",
+    "amount_multiplier": 100000,
+    "population_multiplier": 1,
+    "scheme_from_title_prefix": true,
+    "category_map": {"पुल": "roads_bridges", "सड़क": "roads_bridges", "पेयजल": "drinking_water", "स्वास्थ्य": "health_facility", "शिक्षा": "school_education", "बिजली": "electricity"},
+    "status_map": {"प्रस्तावित": "proposed", "स्वीकृत": "sanctioned", "चालू": "ongoing", "पूर्ण": "completed"},
+    "source": "Bihar scheme list (synthetic sample)"
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "state_code": "MH",
+  "lgd_state_code": "27",
+  "name": "Maharashtra",
+  "name_local": "महाराष्ट्र",
+  "languages": ["en", "hi"],
+  "default_language": "en",
+  "focus_categories": ["public_transport"],
+  "unit_level": "ward",
+  "level_labels": {"district": "District", "block": "Municipal Corporation", "unit": "Ward (प्रभाग)"},
+  "channels": ["web", "voice", "telegram"],
+  "map_center": [18.56, 73.88],
+  "units": {
+    "file": "states/MH/pune_ward_stats.csv",
+    "format": "csv",
+    "fields": {
+      "district_code": "district_code", "district_name": "district",
+      "block_code": "corporation_code", "block_name": "corporation",
+      "unit_code": "ward_no", "unit_name": "ward_name", "unit_name_local": "ward_name_mr",
+      "lat": "lat", "lng": "lng"
+    }
+  },
+  "indicators": [
+    {"canonical": "population", "columns": ["population_2011"], "transform": "int", "year": 2011, "source": "Census 2011 ward population (sample values)"},
+    {"canonical": "disadvantaged_population_pct", "columns": ["slum_population_pct"], "transform": "float", "year": 2011, "source": "Census 2011 slum population share (sample values)", "definition": "Slum population share (urban proxy for disadvantaged population)"},
+    {"canonical": "literacy_rate_pct", "columns": ["literacy_pct"], "transform": "float", "year": 2011, "source": "Census 2011 literacy (sample values)"},
+    {"canonical": "pop_within_500m_bus_stop_pct", "columns": ["pop_within_500m_bus_stop_pct"], "transform": "float", "year_column": "data_year", "source": "PMPML stop accessibility analysis (synthetic sample)"},
+    {"canonical": "sewer_connection_pct", "columns": ["sewer_connection_pct"], "transform": "float", "year_column": "data_year", "source": "Municipal sewerage MIS (synthetic sample)"},
+    {"canonical": "tap_water_coverage_pct", "columns": ["households_piped_water_pct"], "transform": "float", "year_column": "data_year", "source": "Municipal water supply MIS (synthetic sample)"},
+    {"canonical": "water_supply_hours_per_day", "columns": ["water_supply_hours"], "transform": "float", "year_column": "data_year", "source": "Municipal water supply MIS (synthetic sample)"}
+  ],
+  "value_maps": {},
+  "investments": {
+    "file": "states/MH/pune_capex_projects.csv",
+    "format": "csv",
+    "fields": {
+      "project_id": "project_code", "title": "project_title", "scheme": "department", "category": "department",
+      "unit_codes": "ward_nos", "status": "status", "amount": "budget_inr", "start_date": "start",
+      "population_covered": "beneficiary_pop"
+    },
+    "list_separator": "|",
+    "amount_multiplier": 1,
+    "population_multiplier": 1,
+    "category_map": {"PMPML": "public_transport", "Storm Water Drainage": "sanitation", "Water Supply": "drinking_water", "Electrical": "electricity"},
+    "status_map": {"Proposed": "proposed", "Tendered": "sanctioned", "Work in progress": "ongoing", "Completed": "completed"},
+    "source": "Municipal capital works list (synthetic sample)"
+  }
+}

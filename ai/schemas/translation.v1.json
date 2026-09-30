@@ -1,0 +1,24 @@
+{
+  "description": "Gemini translation fallback output (prompt: ai/prompts/translate_v1.md).",
+  "properties": {
+    "text_en": {
+      "title": "Text En",
+      "type": "string"
+    },
+    "detected_language": {
+      "enum": [
+        "en",
+        "hi",
+        "te"
+      ],
+      "title": "Detected Language",
+      "type": "string"
+    }
+  },
+  "required": [
+    "text_en",
+    "detected_language"
+  ],
+  "title": "Translation",
+  "type": "object"
+}

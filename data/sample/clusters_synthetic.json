@@ -1,0 +1,286 @@
+{
+ "_meta": {
+  "source": "Synthetic seed demand clusters",
+  "reference_timestamp": "2026-09-28T12:00:00+05:30",
+  "dataset_version": "sample-v1",
+  "geographic_scope": "BR, AP, MH sample areas",
+  "is_sample": true,
+  "is_synthetic": true,
+  "generated_by": "data/transformations/generate_sample.py"
+ },
+ "clusters": [
+  {
+   "cluster_id": "CL-BR-0001",
+   "state": "BR",
+   "category": "roads_bridges",
+   "sub_category": "bridge",
+   "lgd_district": "BR.GAY",
+   "lgd_block": "BR.GAY.TEK",
+   "lgd_units": [
+    "BR.GAY.TEK.SNB",
+    "BR.GAY.TEK.KRM",
+    "BR.GAY.TEK.BLH"
+   ],
+   "summary": "No bridge over the river near Sonbarsa, Kurmawan and Belhari; villages are cut off and children miss school every monsoon.",
+   "status": "Under Review",
+   "is_synthetic": true
+  },
+  {
+   "cluster_id": "CL-BR-0002",
+   "state": "BR",
+   "category": "roads_bridges",
+   "sub_category": "rural_road",
+   "lgd_district": "BR.GAY",
+   "lgd_block": "BR.GAY.SHG",
+   "lgd_units": [
+    "BR.GAY.SHG.DMR"
+   ],
+   "summary": "Kutcha road from Dumri to Sherghati becomes impassable in the rains; ambulances cannot reach the village.",
+   "status": "Under Review",
+   "is_synthetic": true
+  },
+  {
+   "cluster_id": "CL-BR-0003",
+   "state": "BR",
+   "category": "drinking_water",
+   "sub_category": "handpump_repair",
+   "lgd_district": "BR.GAY",
+   "lgd_block": "BR.GAY.IMG",
+   "lgd_units": [
+    "BR.GAY.IMG.KTH",
+    "BR.GAY.IMG.RMP"
+   ],
+   "summary": "Handpumps broken and Nal Jal taps dry in Kothi and Rampur (Imamganj); women walk long distances for water.",
+   "status": "Clustered",
+   "is_synthetic": true
+  },
+  {
+   "cluster_id": "CL-BR-0004",
+   "state": "BR",
+   "category": "health_facility",
+   "sub_category": "phc",
+   "lgd_district": "BR.GAY",
+   "lgd_block": "BR.GAY.BDG",
+   "lgd_units": [
+    "BR.GAY.BDG.BKR",
+    "BR.GAY.BDG.MST"
+   ],
+   "summary": "No functional health centre in Bakraur and Mastipur; deliveries require travel to Gaya city.",
+   "status": "Clustered",
+   "is_synthetic": true
+  },
+  {
+   "cluster_id": "CL-BR-0005",
+   "state": "BR",
+   "category": "school_education",
+   "sub_category": "secondary_school",
+   "lgd_district": "BR.GAY",
+   "lgd_block": "BR.GAY.WZG",
+   "lgd_units": [
+    "BR.GAY.WZG.FTP"
+   ],
+   "summary": "No high school in Fatehpur; girls drop out after class eight.",
+   "status": "Clustered",
+   "is_synthetic": true
+  },
+  {
+   "cluster_id": "CL-BR-0006",
+   "state": "BR",
+   "category": "roads_bridges",
+   "sub_category": "bridge",
+   "lgd_district": "BR.AUR",
+   "lgd_block": "BR.AUR.OBR",
+   "lgd_units": [
+    "BR.AUR.OBR.KHR"
+   ],
+   "summary": "No bridge on the Punpun river near Khaira; the village is cut off in the monsoon.",
+   "status": "Clustered",
+   "is_synthetic": true
+  },
+  {
+   "cluster_id": "CL-BR-0007",
+   "state": "BR",
+   "category": "electricity",
+   "sub_category": "transformer",
+   "lgd_district": "BR.AUR",
+   "lgd_block": "BR.AUR.DEO",
+   "lgd_units": [
+    "BR.AUR.DEO.DEO"
+   ],
+   "summary": "Burnt-out transformer in Deo; no electricity for days.",
+   "status": "Clustered",
+   "is_synthetic": true
+  },
+  {
+   "cluster_id": "CL-AP-0001",
+   "state": "AP",
+   "category": "drinking_water",
+   "sub_category": "piped_supply",
+   "lgd_district": "AP.ATP",
+   "lgd_block": "AP.ATP.KDG",
+   "lgd_units": [
+    "AP.ATP.KDG.MDG",
+    "AP.ATP.KDG.VRL"
+   ],
+   "summary": "No reliable drinking water in Mudigal and Varli (Kalyandurg); tanker once a week, borewells dry.",
+   "status": "Under Review",
+   "is_synthetic": true
+  },
+  {
+   "cluster_id": "CL-AP-0002",
+   "state": "AP",
+   "category": "drinking_water",
+   "sub_category": "fluoride_free_water",
+   "lgd_district": "AP.ATP",
+   "lgd_block": "AP.ATP.DMV",
+   "lgd_units": [
+    "AP.ATP.DMV.CGC",
+    "AP.ATP.DMV.PTK"
+   ],
+   "summary": "High-fluoride groundwater in Chigicherla and Pothukunta (Dharmavaram); safe drinking water needed.",
+   "status": "Clustered",
+   "is_synthetic": true
+  },
+  {
+   "cluster_id": "CL-AP-0003",
+   "state": "AP",
+   "category": "irrigation",
+   "sub_category": "check_dam",
+   "lgd_district": "AP.ATP",
+   "lgd_block": "AP.ATP.RYD",
+   "lgd_units": [
+    "AP.ATP.RYD.KNK"
+   ],
+   "summary": "Canal water not reaching the Kanekal tank; crops drying.",
+   "status": "Clustered",
+   "is_synthetic": true
+  },
+  {
+   "cluster_id": "CL-AP-0004",
+   "state": "AP",
+   "category": "health_facility",
+   "sub_category": "ambulance",
+   "lgd_district": "AP.ATP",
+   "lgd_block": "AP.ATP.GTY",
+   "lgd_units": [
+    "AP.ATP.GTY.GTY"
+   ],
+   "summary": "No ambulance available at night in Gooty.",
+   "status": "Clustered",
+   "is_synthetic": true
+  },
+  {
+   "cluster_id": "CL-AP-0005",
+   "state": "AP",
+   "category": "drinking_water",
+   "sub_category": "tanker_supply",
+   "lgd_district": "AP.KNL",
+   "lgd_block": "AP.KNL.PTK",
+   "lgd_units": [
+    "AP.KNL.PTK.HSR"
+   ],
+   "summary": "Water tanker reaches Hosur (Pattikonda) only once every ten days.",
+   "status": "Clustered",
+   "is_synthetic": true
+  },
+  {
+   "cluster_id": "CL-AP-0006",
+   "state": "AP",
+   "category": "school_education",
+   "sub_category": "classrooms",
+   "lgd_district": "AP.KNL",
+   "lgd_block": "AP.KNL.ADN",
+   "lgd_units": [
+    "AP.KNL.ADN.PHV"
+   ],
+   "summary": "Not enough classrooms in the Pedda Harivanam school.",
+   "status": "Clustered",
+   "is_synthetic": true
+  },
+  {
+   "cluster_id": "CL-MH-0001",
+   "state": "MH",
+   "category": "public_transport",
+   "sub_category": "bus_route",
+   "lgd_district": "MH.PUN",
+   "lgd_block": "MH.PUN.PMC",
+   "lgd_units": [
+    "PMC-W04",
+    "PMC-W22"
+   ],
+   "summary": "Too few morning buses between Kharadi and Hadapsar; long waits at the EON IT Park stop.",
+   "status": "Under Review",
+   "is_synthetic": true
+  },
+  {
+   "cluster_id": "CL-MH-0002",
+   "state": "MH",
+   "category": "public_transport",
+   "sub_category": "last_mile",
+   "lgd_district": "MH.PUN",
+   "lgd_block": "MH.PUN.PMC",
+   "lgd_units": [
+    "PMC-W03"
+   ],
+   "summary": "No bus stop within walking distance of new housing societies in Wagholi.",
+   "status": "Clustered",
+   "is_synthetic": true
+  },
+  {
+   "cluster_id": "CL-MH-0003",
+   "state": "MH",
+   "category": "public_transport",
+   "sub_category": "bus_route",
+   "lgd_district": "MH.PUN",
+   "lgd_block": "MH.PUN.PCMC",
+   "lgd_units": [
+    "PCMC-W02"
+   ],
+   "summary": "Moshi needs a bus connection to Bhosari MIDC.",
+   "status": "Clustered",
+   "is_synthetic": true
+  },
+  {
+   "cluster_id": "CL-MH-0004",
+   "state": "MH",
+   "category": "sanitation",
+   "sub_category": "drainage",
+   "lgd_district": "MH.PUN",
+   "lgd_block": "MH.PUN.PMC",
+   "lgd_units": [
+    "PMC-W26"
+   ],
+   "summary": "Open drains overflow in Kondhwa whenever it rains.",
+   "status": "Clustered",
+   "is_synthetic": true
+  },
+  {
+   "cluster_id": "CL-MH-0005",
+   "state": "MH",
+   "category": "drinking_water",
+   "sub_category": "piped_supply",
+   "lgd_district": "MH.PUN",
+   "lgd_block": "MH.PUN.PCMC",
+   "lgd_units": [
+    "PCMC-W01"
+   ],
+   "summary": "Chikhli gets piped water only one hour on alternate days.",
+   "status": "Clustered",
+   "is_synthetic": true
+  },
+  {
+   "cluster_id": "CL-MH-0006",
+   "state": "MH",
+   "category": "electricity",
+   "sub_category": "streetlights",
+   "lgd_district": "MH.PUN",
+   "lgd_block": "MH.PUN.PMC",
+   "lgd_units": [
+    "PMC-W06"
+   ],
+   "summary": "Streetlights not working on lanes in Yerawada; unsafe for women at night.",
+   "status": "Clustered",
+   "is_synthetic": true
+  }
+ ]
+}

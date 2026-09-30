@@ -1,0 +1,81 @@
+{
+  "description": "Lowest mapped administrative unit (village / habitation / ward) with parents.",
+  "properties": {
+    "lgd_code": {
+      "title": "Lgd Code",
+      "type": "string"
+    },
+    "code_system": {
+      "default": "sample-lgd-style",
+      "title": "Code System",
+      "type": "string"
+    },
+    "name": {
+      "title": "Name",
+      "type": "string"
+    },
+    "name_local": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Name Local"
+    },
+    "level": {
+      "title": "Level",
+      "type": "string"
+    },
+    "state": {
+      "title": "State",
+      "type": "string"
+    },
+    "district_code": {
+      "title": "District Code",
+      "type": "string"
+    },
+    "district_name": {
+      "title": "District Name",
+      "type": "string"
+    },
+    "block_code": {
+      "title": "Block Code",
+      "type": "string"
+    },
+    "block_name": {
+      "title": "Block Name",
+      "type": "string"
+    },
+    "lat": {
+      "title": "Lat",
+      "type": "number"
+    },
+    "lng": {
+      "title": "Lng",
+      "type": "number"
+    },
+    "h3_cell": {
+      "title": "H3 Cell",
+      "type": "string"
+    }
+  },
+  "required": [
+    "lgd_code",
+    "name",
+    "level",
+    "state",
+    "district_code",
+    "district_name",
+    "block_code",
+    "block_name",
+    "lat",
+    "lng",
+    "h3_cell"
+  ],
+  "title": "AdminUnit",
+  "type": "object"
+}

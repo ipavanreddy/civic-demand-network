@@ -1,0 +1,24 @@
+{
+  "description": "Gemini audio-transcription fallback output (prompt: ai/prompts/transcribe_v1.md).",
+  "properties": {
+    "transcript": {
+      "title": "Transcript",
+      "type": "string"
+    },
+    "language": {
+      "enum": [
+        "en",
+        "hi",
+        "te"
+      ],
+      "title": "Language",
+      "type": "string"
+    }
+  },
+  "required": [
+    "transcript",
+    "language"
+  ],
+  "title": "Transcript",
+  "type": "object"
+}

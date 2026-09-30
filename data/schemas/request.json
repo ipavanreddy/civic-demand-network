@@ -1,0 +1,278 @@
+{
+  "properties": {
+    "request_id": {
+      "title": "Request Id",
+      "type": "string"
+    },
+    "citizen_id": {
+      "title": "Citizen Id",
+      "type": "string"
+    },
+    "channel": {
+      "title": "Channel",
+      "type": "string"
+    },
+    "language": {
+      "title": "Language",
+      "type": "string"
+    },
+    "text_original": {
+      "title": "Text Original",
+      "type": "string"
+    },
+    "text_en": {
+      "title": "Text En",
+      "type": "string"
+    },
+    "audio_url": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Audio Url"
+    },
+    "photo_url": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Photo Url"
+    },
+    "category": {
+      "title": "Category",
+      "type": "string"
+    },
+    "sub_category": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Sub Category"
+    },
+    "summary_en": {
+      "title": "Summary En",
+      "type": "string"
+    },
+    "urgency": {
+      "title": "Urgency",
+      "type": "string"
+    },
+    "urgency_reason": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Urgency Reason"
+    },
+    "est_beneficiaries": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Est Beneficiaries"
+    },
+    "vulnerable_groups": {
+      "default": [],
+      "items": {
+        "type": "string"
+      },
+      "title": "Vulnerable Groups",
+      "type": "array"
+    },
+    "seasonality": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Seasonality"
+    },
+    "sentiment": {
+      "default": 0.0,
+      "title": "Sentiment",
+      "type": "number"
+    },
+    "confidence": {
+      "default": 0.0,
+      "title": "Confidence",
+      "type": "number"
+    },
+    "missing_information": {
+      "default": [],
+      "items": {
+        "type": "string"
+      },
+      "title": "Missing Information",
+      "type": "array"
+    },
+    "state": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "State"
+    },
+    "lgd_district": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Lgd District"
+    },
+    "lgd_block": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Lgd Block"
+    },
+    "lgd_unit": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Lgd Unit"
+    },
+    "h3_cell": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "H3 Cell"
+    },
+    "resolution_method": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Resolution Method"
+    },
+    "resolution_confidence": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Resolution Confidence"
+    },
+    "cluster_id": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Cluster Id"
+    },
+    "status": {
+      "default": "Received",
+      "title": "Status",
+      "type": "string"
+    },
+    "created_at": {
+      "format": "date-time",
+      "title": "Created At",
+      "type": "string"
+    },
+    "model_name": {
+      "title": "Model Name",
+      "type": "string"
+    },
+    "model_version": {
+      "title": "Model Version",
+      "type": "string"
+    },
+    "prompt_version": {
+      "title": "Prompt Version",
+      "type": "string"
+    },
+    "is_synthetic": {
+      "default": false,
+      "title": "Is Synthetic",
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "request_id",
+    "citizen_id",
+    "channel",
+    "language",
+    "text_original",
+    "text_en",
+    "category",
+    "summary_en",
+    "urgency",
+    "created_at",
+    "model_name",
+    "model_version",
+    "prompt_version"
+  ],
+  "title": "CitizenRequest",
+  "type": "object"
+}
