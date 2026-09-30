@@ -94,7 +94,7 @@ YAML
   echo
   echo "API: $url  (health: $url/health, docs: $url/docs)"
   curl -fsS "$url/health" && echo
-  curl -fsS "$url/api/system/status" | python3 -c 'import json,sys; d=json.load(sys.stdin); [print(f"  {k:15} {v[\"mode\"]:8} {v[\"detail\"]}") for k,v in d["integrations"].items()]' || true
+  curl -fsS "$url/api/system/status" | python3 -c 'import json,sys; d=json.load(sys.stdin); [print("  %-15s %-8s %s" % (k, v["mode"], v["detail"])) for k,v in d["integrations"].items()]' || true
 }
 
 for t in "${TARGETS[@]}"; do
